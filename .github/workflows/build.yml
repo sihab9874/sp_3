@@ -4,10 +4,10 @@ jobs:
   on_build_actions:
     runs-on: ubuntu-latest
     steps:
-     -uses: actions/checkout@v2
-     -name: Install dependencies
-      run: |
-        cd $GITHUB_WORKSPACE
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          cd $GITHUB_WORKSPACE
 
-    -name: Run Test
-      run: python -m unittest tests/*.py
+      - name: Run Test
+        run: python -m unittest tests/*.py
