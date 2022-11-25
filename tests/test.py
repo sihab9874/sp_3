@@ -8,7 +8,7 @@ class Testing(unittest.TestCase):
         self.assertEqual(val1, 0)
         val2 = person.set_name("Sihabul 2")
         self.assertEqual(val2, 1)
-    # TODO(geguileo): Once we drom support dor MySQL 5.5 we can simplify this
+
     def test_getter(self):
         person = Person()
         person.set_name("Sihabul")
