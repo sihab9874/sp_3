@@ -12,7 +12,7 @@ class TestCSVPrinter(unittest.TestCase):
         l = printer.read()
         print(l[1][1])
         self.assertEqual(" 123", l[1][1])
-
+    # TODO(geguileo): Once we drop support for MySQL 5.5 we can simplify this.
 
     def test_read3(self):
         with self.assertRaises(Exception):
