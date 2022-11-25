@@ -1,11 +1,14 @@
-import csv
+class Person:
+    def __init__(self):
+        self.name = []
+    def set_name(self, user_name):
+        self.name.append(user_name)
+        return len(self.name) - 1
 
-class CSVPrinter:
-    def __init__(self, file_name):
-        self.file_name = file_name
     # FIXME: catch the right exception, log it, and raise
-    def read(self):
-        with open(self.file_name) as f:
-            reader = csv.reader(f)
-            lines = [row for row in reader]
-        return lines
+        
+    def get_name(self, user_id):
+        if user_id >= len(self.name):
+            return 'There is no such user'
+        else:
+            return self.name[user_id]

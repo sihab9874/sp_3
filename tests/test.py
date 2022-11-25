@@ -1,23 +1,21 @@
 import unittest 
-from speciallecture.ss2022 import CSVPrinter
+from speciallecture.ss2022 import Person
 
-class TestCSVPrinter(unittest.TestCase):
-    def test_read1(self):
-        printer = CSVPrinter("tests/sample.csv")
-        l = printer.read()
-        self.assertEqual(4, len(l))
-
-    def test_read2(self):
-        printer = CSVPrinter("tests/sample.csv")
-        l = printer.read()
-        print(l[1][1])
-        self.assertEqual(" 123", l[1][1])
-    # TODO(geguileo): Once we drop support for MySQL 5.5 we can simplify this.
-
-    def test_read3(self):
-        with self.assertRaises(Exception):
-            printer = CSVPrinter("tests/samle.csv")
-            printer.read()
+class Testing(unittest.TestCase):
+    def test_setter(self):
+        person = Person()
+        val1 = person.set_name("Sihabul")
+        self.assertEqual(val1, 0)
+        val2 = person.set_name("Sihabul 2")
+        self.assertEqual(val2, 1)
+    # TODO(geguileo): Once we drom support dor MySQL 5.5 we can simplify this
+    def test_getter(self):
+        person = Person()
+        person.set_name("Sihabul")
+        person.set_name("Sihabul 2")
+        self.assertEqual(person.get_name(0), "Sihabul")
+        self.assertEqual(person.get_name(1), "Sihabul 2")
+        
 
 
             
